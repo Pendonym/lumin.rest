@@ -53,8 +53,10 @@ const supportedGames: SupportedGame[] = [
     image: "/flee-the-facility.webp",
     placeId: 893973440,
     url: "https://www.roblox.com/games/893973440/Flee-the-Facility",
-    rscriptsUrl: "https://rscripts.net/script/axon-hub-flee-the-facility-script-or-esp-auto-hack-and-fly-rUvB",
-    scriptbloxUrl: "https://scriptblox.com/script/Flee-the-Facility-FacilityCore-many-features-FOR-FREE-like-AutoFarm-Instant-Wi-95246",
+    rscriptsUrl:
+      "https://rscripts.net/script/axon-hub-flee-the-facility-script-or-esp-auto-hack-and-fly-rUvB",
+    scriptbloxUrl:
+      "https://scriptblox.com/script/Flee-the-Facility-FacilityCore-many-features-FOR-FREE-like-AutoFarm-Instant-Wi-95246",
   },
   {
     title: "The Rake REMASTERED",
@@ -62,8 +64,10 @@ const supportedGames: SupportedGame[] = [
     image: "/the-rake.webp",
     placeId: 2413927524,
     url: "https://www.roblox.com/games/2413927524/The-Rake-REMASTERED",
-    rscriptsUrl: "https://rscripts.net/script/the-rake-remastered-or-infinite-stamina-aura-stunstick-1hKe",
-    scriptbloxUrl: "https://scriptblox.com/script/The-Rake-REMASTERED-THE-RAKE-DETECTOR-SCRIPT-HUB-162062",
+    rscriptsUrl:
+      "https://rscripts.net/script/the-rake-remastered-or-infinite-stamina-aura-stunstick-1hKe",
+    scriptbloxUrl:
+      "https://scriptblox.com/script/The-Rake-REMASTERED-THE-RAKE-DETECTOR-SCRIPT-HUB-162062",
   },
 ];
 
@@ -112,7 +116,11 @@ export default function Home() {
 
         <div className="min-h-[75vh] flex flex-col items-center justify-center pt-24 pb-16 px-4">
           <BlurFade delay={0.2 + 1 * 0.05}>
-            <a href="https://lumin-rocks.mysellauth.com/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://lumin-rocks.mysellauth.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="flex mb-4">
                 <div
                   className={cn(
@@ -138,14 +146,10 @@ export default function Home() {
                 type="text"
                 className="overflow-hidden text-ellipsis min-w-[300px] max-sm:min-w-0 max-sm:w-full border-[#f8bfd4]/20 focus-visible:ring-[#f8bfd4]/50"
                 readOnly
-                value={
-                  'loadstring(game:HttpGet("https://lumin.rocks/"))()'
-                }
+                value={'loadstring(game:HttpGet("https://lumin.rocks/"))()'}
               />
               <CopyButton
-                text={
-                  'loadstring(game:HttpGet("https://lumin.rocks/"))()'
-                }
+                text={'loadstring(game:HttpGet("https://lumin.rocks/"))()'}
               />
 
               <a
@@ -154,7 +158,10 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="px-2 py-2 relative cursor-pointer rounded-lg backdrop-blur-xl border transition-shadow duration-300 ease-in-out hover:shadow dark:bg-[radial-gradient(circle_at_50%_0%,var(--primary)/10%_0%,transparent_60%)] dark:hover:shadow-[0_0_20px_var(--primary)/10%]" aria-label="Discord Server">
+                <button
+                  className="px-2 py-2 relative cursor-pointer rounded-lg backdrop-blur-xl border transition-shadow duration-300 ease-in-out hover:shadow dark:bg-[radial-gradient(circle_at_50%_0%,var(--primary)/10%_0%,transparent_60%)] dark:hover:shadow-[0_0_20px_var(--primary)/10%]"
+                  aria-label="Discord Server"
+                >
                   <svg
                     className="w-5 h-5"
                     viewBox="0 0 48 37"
@@ -192,7 +199,7 @@ export default function Home() {
               <Executor
                 name="Real"
                 image="/executor-real.ico"
-                url="https://deltaexploits.gg/"
+                url="https://projectreal.net/real"
               />
             </div>
 
