@@ -35,7 +35,7 @@
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.503.0",
     "motion": "^12.23.12",
-    "next": "^15.5.19",
+    "next": "^16.2.7",
     "react": "19.1.2",
     "react-dom": "19.1.2",
     "react-helmet-async": "^3.0.0",
