@@ -154,7 +154,7 @@ export default function Home() {
 
               <a
                 aria-label="Discord Server"
-                href="https://discord.gg/jG9KuUnbXS"
+                href="https://discord.gg/getlumin"
                 target="_blank"
                 rel="noopener noreferrer"
               >
