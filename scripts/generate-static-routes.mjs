@@ -12,7 +12,7 @@ const routeMeta = {
     keywords:
       "lumin.rocks, lumin, roblox, script hub, best roblox script, working roblox script 2025, tower of hell script, grace script, build a boat script, murder mystery 2 script, rivals script",
     url: "https://lumin.rocks/",
-    image: "https://lumin.rocks/icon.png",
+    image: "https://lumin.rocks/brand/icon.png",
   },
   buy: {
     title: "Get Your Key - lumin.rocks",
@@ -21,7 +21,7 @@ const routeMeta = {
     keywords:
       "lumin.rocks key, lumin key system, roblox script key, free roblox script access, lumin premium",
     url: "https://lumin.rocks/buy/",
-    image: "https://lumin.rocks/icon.png",
+    image: "https://lumin.rocks/brand/icon.png",
   },
   "buy/robux": {
     title: "Buy with Robux - lumin.rocks",
@@ -29,7 +29,7 @@ const routeMeta = {
       "Purchase lumin.rocks access using Robux on the Roblox catalog.",
     keywords: "lumin.rocks robux, buy lumin robux, roblox catalog lumin",
     url: "https://lumin.rocks/buy/robux/",
-    image: "https://lumin.rocks/icon.png",
+    image: "https://lumin.rocks/brand/icon.png",
   },
 };
 
@@ -48,8 +48,8 @@ function injectMeta(html, { title, description, keywords, url, image }) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" href="/icon.png" />
-    <link rel="apple-touch-icon" href="/icon.png" />
+    <link rel="icon" type="image/png" href="/brand/icon.png" />
+    <link rel="apple-touch-icon" href="/brand/icon.png" />
     <title data-rh="true">${title}</title>
     ${assetTags}
     <meta data-rh="true" name="description" content="${description}" />

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import { CircleMinus, CircleCheck, CircleAlert, BanIcon } from "lucide-react";
@@ -83,11 +84,14 @@ export default function GameCard({
           target="_blank"
           rel="noopener noreferrer"
           href={url ?? `https://roblox.com/games/${placeId}/${title}`}
+          className="relative block w-full h-full"
         >
-          <img
+          <Image
             src={image}
             alt={title}
-            className="w-full h-full object-cover cursor-pointer"
+            fill
+            sizes="(max-width: 768px) 100vw, 288px"
+            className="object-cover cursor-pointer"
             loading="lazy"
           />
         </a>
