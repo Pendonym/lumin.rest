@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { loadstringList } from "@/data/loadstrings";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   if (request.nextUrl.pathname !== "/") return NextResponse.next();
 
   const accept = request.headers.get("accept") || "";
