@@ -20,7 +20,7 @@ const routeMeta = {
       "Get free or premium access to lumin.rocks, a premium Roblox script hub with support for Grace, Build a Boat for Treasure, Murder Mystery 2, and more.",
     keywords:
       "lumin.rocks key, lumin key system, roblox script key, free roblox script access, lumin premium",
-    url: "https://lumin.rocks/buy/",
+    url: "https://lumin.rocks/purchase/",
     image: "https://lumin.rocks/brand/icon.png",
   },
   "buy/robux": {
@@ -28,7 +28,7 @@ const routeMeta = {
     description:
       "Purchase lumin.rocks access using Robux on the Roblox catalog.",
     keywords: "lumin.rocks robux, buy lumin robux, roblox catalog lumin",
-    url: "https://lumin.rocks/buy/robux/",
+    url: "https://lumin.rocks/purchase/robux/",
     image: "https://lumin.rocks/brand/icon.png",
   },
 };

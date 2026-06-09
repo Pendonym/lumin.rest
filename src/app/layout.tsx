@@ -1,28 +1,46 @@
 import type { Metadata, Viewport } from "next";
+import { Inter, IBM_Plex_Mono } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
+import TopLoader from "@/components/layout/top-loader";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-ibm-plex-mono",
+  display: "swap",
+});
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://lumin.rocks";
 
 export const viewport: Viewport = {
   themeColor: "#f8bfd4",
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "lumin.rocks - Premium Roblox Script Hub",
   description:
-    "lumin.rocks is a premium Roblox script hub supporting Grace, Build a Boat for Treasure, Tower of Hell, and more.",
+    "lumin.rocks is a premium Roblox script hub supporting Flee the Facility, RIVALS, The Rake REMASTERED, Slime RNG, and more.",
   keywords:
-    "lumin.rocks, lumin, roblox, script hub, best roblox script, working roblox script 2025, tower of hell script, grace script, build a boat script!",
+    "lumin.rocks, lumin, roblox, script hub, best roblox script, flee the facility script, rivals script, the rake remastered script, slime rng script, roblox script 2026, hub, keyless",
   authors: [{ name: "lumin.rocks" }],
-  robots: "index, follow",
+  robots: { index: true, follow: true },
   openGraph: {
     type: "website",
     siteName: "lumin.rocks",
     locale: "en_US",
-    images: "https://lumin.rocks/brand/icon.png",
+    images: `${SITE_URL}/brand/icon.png`,
   },
   twitter: {
     card: "summary",
-    images: "https://lumin.rocks/brand/icon.png",
+    images: `${SITE_URL}/brand/icon.png`,
   },
 };
 
@@ -39,7 +57,8 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/brand/icon.png" />
         <link rel="apple-touch-icon" href="/brand/icon.png" />
       </head>
-      <body>
+      <body className={`${inter.variable} ${ibmPlexMono.variable}`}>
+        <TopLoader />
         {children}
         <Toaster richColors />
       </body>

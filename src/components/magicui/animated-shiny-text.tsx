@@ -16,7 +16,7 @@ const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({
   grayShade = 400
 }) => {
   return (
-    <p
+    <span
       style={
         {
           "--shimmer-width": `${shimmerWidth}px`
@@ -35,7 +35,7 @@ const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({
       )}
     >
       {children}
-    </p>
+    </span>
   );
 };
 

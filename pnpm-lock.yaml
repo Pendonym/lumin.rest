@@ -65,6 +65,9 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.2.7
         version: 1.2.8(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.1.2(react@19.1.2))(react@19.1.2)
+      altcha:
+        specifier: ^3.0.11
+        version: 3.0.11
       canvas-confetti:
         specifier: ^1.9.3
         version: 1.9.4
@@ -1701,6 +1704,9 @@ packages:
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
 
+  altcha@3.0.11:
+    resolution: {integrity: sha512-DFhLDJIL37UfRdgYliSBSpCaYySVztOL8Z5V5KuxmaVa5JUgIapvoUiQrIFbn38cPtZBs5j3izMtglpcZFWCMA==}
+
   aria-hidden@1.2.6:
     resolution: {integrity: sha512-ik3ZgC9dY/lYVVM++OISsaYDeg1tb0VtP5uL3ouh1koGOaUMDPpbFIei4JkFimWUFPn90sbMNMXQAIVOlnYKJA==}
     engines: {node: '>=10'}
@@ -1844,6 +1850,9 @@ packages:
 
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
+
+  hash-wasm@4.12.0:
+    resolution: {integrity: sha512-+/2B2rYLb48I/evdOIhP+K/DD2ca2fgBjp6O+GBEnCDk2e4rpeXIK8GvIyRPjTezgmWn9gmKwkQjjx6BtqDHVQ==}
 
   intl-messageformat@10.7.18:
     resolution: {integrity: sha512-m3Ofv/X/tV8Y3tHXLohcuVuhWKo7BBq62cqY15etqmLxg2DZ34AGGgQDeR+SCta2+zICb1NX83af0GJmbQ1++g==}
@@ -3832,6 +3841,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  altcha@3.0.11:
+    dependencies:
+      hash-wasm: 4.12.0
+
   aria-hidden@1.2.6:
     dependencies:
       tslib: 2.8.1
@@ -3970,6 +3983,8 @@ snapshots:
   get-nonce@1.0.1: {}
 
   graceful-fs@4.2.11: {}
+
+  hash-wasm@4.12.0: {}
 
   intl-messageformat@10.7.18:
     dependencies:

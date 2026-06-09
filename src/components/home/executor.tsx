@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BlurFade } from "./magicui/blur-fade";
+import { BlurFade } from "@/components/magicui/blur-fade";
 
 export default function Executor({
   url,

@@ -3,16 +3,16 @@
 import { BlurFade } from "@/components/magicui/blur-fade";
 import DotPattern from "@/components/magicui/dot-pattern";
 import { cn } from "@/lib/utils";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/navbar";
 import WordRotate from "@/components/ui/word-rotate";
-import GameCard from "@/components/game-card";
+import Navbar from "@/components/layout/navbar";
+import GameCard from "@/components/home/game-card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import CopyButton from "@/components/copy-button";
+import CopyButton from "@/components/home/copy-button";
 import Image from "next/image";
-import { ExternalLinkIcon } from "lucide-react";
-import Executor from "@/components/executor";
-import PurchaseBadge from "@/components/purchase-badge";
+import Executor from "@/components/home/executor";
+import PurchaseBadge from "@/components/home/purchase-badge";
+import Footer from "@/components/layout/footer";
 import { supportedGames } from "@/data/games";
 
 const supportedGameHeadings = supportedGames.map(
@@ -22,26 +22,7 @@ const supportedGameHeadings = supportedGames.map(
 export default function Home() {
   return (
     <>
-      <Navbar className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur supports-backdrop-filter:bg-background/60">
-        <NavbarBrand>
-          <span className="font-bold text-[#f8bfd4]">lumin</span>
-          <span className="font-bold">.rocks</span>
-        </NavbarBrand>
-
-        <NavbarContent justify="end" className="mt-4 mb-4">
-          <NavbarItem>
-            <a
-              href="https://lumin-rocks.mysellauth.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative text-foreground transition-colors hover:text-[#f8bfd4] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-[#f8bfd4] after:transition-all hover:after:w-full inline-flex items-center gap-1"
-            >
-              View our prices
-              <ExternalLinkIcon className="w-3 h-3" />
-            </a>
-          </NavbarItem>
-        </NavbarContent>
-      </Navbar>
+      <Navbar />
 
       <main className="overflow-x-hidden">
         <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-24 pb-20 px-4">
@@ -65,11 +46,7 @@ export default function Home() {
                     "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
                   )}
                 >
-                  <a
-                    href="https://lumin-rocks.mysellauth.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="/purchase">
                     <PurchaseBadge />
                   </a>
                 </div>
@@ -106,7 +83,7 @@ export default function Home() {
                 <Button size="icon" variant="outline" asChild>
                   <a
                     aria-label="Discord Server"
-                    href="https://discord.gg/jG9KuUnbXS"
+                    href="https://discord.gg/getlumin"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -116,7 +93,6 @@ export default function Home() {
                       width={20}
                       height={20}
                       className="w-5 h-5"
-                      loading="eager"
                     />
                   </a>
                 </Button>
@@ -166,7 +142,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Supported Games */}
         <section className="relative py-24 md:py-32 px-4">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,var(--tw-gradient-stops))] from-[#f8bfd4]/8 via-transparent to-transparent pointer-events-none" />
 
@@ -196,7 +171,7 @@ export default function Home() {
 
             <BlurFade delay={0.55} inView>
               <p className="text-sm md:text-base text-muted-foreground mb-10 max-w-md">
-                High quality scripts for the games you actually play.
+                High quality features for the games you actually play.
               </p>
             </BlurFade>
 
@@ -219,38 +194,10 @@ export default function Home() {
                 />
               ))}
             </BlurFade>
-
-            <BlurFade delay={0.75} inView>
-              <p className="text-muted-foreground text-sm mt-8">
-                And many more games supported...
-              </p>
-            </BlurFade>
           </div>
         </section>
 
-        <div className="mt-10 w-full border-t border-white/20" />
-
-        <div className="px-10 py-6 w-screen flex flex-row justify-between items-center max-md:justify-center max-md:flex-col">
-          <div className="px-2 py-2 flex flex-row items-center gap-2">
-            <div>
-              <p className="text-xs text-left font-bold">
-                <span className="text-[#f8bfd4]">lumin</span>.rocks
-              </p>
-              <p className="text-muted-foreground text-xs">
-                Originally known as lumin.rest
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col items-end gap-1 max-md:items-center max-md:mt-5">
-            <p className="text-muted-foreground text-xs px-2 text-right max-md:text-center">
-              This software is not affiliated, associated, authorized, endorsed
-              by, or
-              <br />
-              in any way officially connected with Roblox or any of its
-              subsidiaries or its affiliates.
-            </p>
-          </div>
-        </div>
+        <Footer />
       </main>
     </>
   );
