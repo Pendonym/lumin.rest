@@ -9,7 +9,7 @@ export default function Footer() {
               <span className="text-[#f8bfd4]">lumin</span>.rest
             </p>
             <p className="text-muted-foreground text-xs">
-              Originally known as lumin.rest
+              Originally known as lumin.rocks
             </p>
           </div>
         </div>
