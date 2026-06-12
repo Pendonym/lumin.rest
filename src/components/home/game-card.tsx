@@ -28,6 +28,7 @@ type GameCardProps = {
   url?: string;
   rscriptsUrl?: string;
   scriptbloxUrl?: string;
+  showcaseVideoUrl?: string;
   status?: boolean;
   issues?: boolean;
   gamesStatusData: Record<string, string>;
@@ -40,6 +41,7 @@ export default function GameCard({
   url,
   rscriptsUrl,
   scriptbloxUrl,
+  showcaseVideoUrl,
   status,
   issues,
   gamesStatusData
@@ -47,6 +49,7 @@ export default function GameCard({
   const resourceLinks = [
     rscriptsUrl ? { label: "Rscripts", href: rscriptsUrl } : null,
     scriptbloxUrl ? { label: "Scriptblox", href: scriptbloxUrl } : null,
+    showcaseVideoUrl ? { label: "Showcase", href: showcaseVideoUrl } : null,
   ].filter((link): link is { label: string; href: string } => link !== null);
 
   // handle icon //
@@ -77,8 +80,11 @@ export default function GameCard({
       break;
   }
 
+  const topLinks = resourceLinks.filter((l) => l.label !== "Showcase");
+  const showcaseLink = resourceLinks.find((l) => l.label === "Showcase");
+
   return (
-    <Card className="w-72 bg-zinc-900 text-white overflow-hidden">
+    <Card className="bg-zinc-900 text-white overflow-hidden flex flex-col">
       <div className="h-40 w-full overflow-hidden">
         <a
           target="_blank"
@@ -112,20 +118,54 @@ export default function GameCard({
       </CardHeader>
 
       {resourceLinks.length > 0 ? (
-        <CardContent className="flex gap-2 p-4 pt-0">
-          {resourceLinks.map((link) => (
-            <Button
-              key={link.label}
-              asChild
-              size="sm"
-              variant="outline"
-              className="h-8 flex-1 border-zinc-700 bg-zinc-800 text-zinc-100 hover:bg-zinc-700 hover:text-white"
-            >
-              <a href={link.href} target="_blank" rel="noopener noreferrer">
-                {link.label}
-              </a>
-            </Button>
-          ))}
+        <CardContent className="flex flex-col gap-2 p-4 pt-0">
+          {topLinks.length === 2 ? (
+            <>
+              <div className="flex gap-2">
+                {topLinks.map((link) => (
+                  <Button
+                    key={link.label}
+                    asChild
+                    size="sm"
+                    variant="outline"
+                    className="h-8 flex-1 border-zinc-700 bg-zinc-800 text-zinc-100 hover:bg-zinc-700 hover:text-white"
+                  >
+                    <a href={link.href} target="_blank" rel="noopener noreferrer">
+                      {link.label}
+                    </a>
+                  </Button>
+                ))}
+              </div>
+              {showcaseLink && (
+                <Button
+                  asChild
+                  size="sm"
+                  variant="outline"
+                  className="h-8 w-full border-zinc-700 bg-zinc-800 text-zinc-100 hover:bg-zinc-700 hover:text-white"
+                >
+                  <a href={showcaseLink.href} target="_blank" rel="noopener noreferrer">
+                    {showcaseLink.label}
+                  </a>
+                </Button>
+              )}
+            </>
+          ) : (
+            <div className="flex gap-2">
+              {[...topLinks, ...(showcaseLink ? [showcaseLink] : [])].map((link) => (
+                <Button
+                  key={link.label}
+                  asChild
+                  size="sm"
+                  variant="outline"
+                  className="h-8 flex-1 border-zinc-700 bg-zinc-800 text-zinc-100 hover:bg-zinc-700 hover:text-white"
+                >
+                  <a href={link.href} target="_blank" rel="noopener noreferrer">
+                    {link.label}
+                  </a>
+                </Button>
+              ))}
+            </div>
+          )}
         </CardContent>
       ) : null}
     </Card>

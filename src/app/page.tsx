@@ -179,7 +179,7 @@ export default function Home() {
             </BlurFade>
 
             <BlurFade
-              className="flex flex-wrap justify-center gap-6 w-full"
+              className="grid grid-cols-2 gap-6"
               delay={0.55}
               inView
             >
@@ -193,6 +193,7 @@ export default function Home() {
                   url={game.url}
                   rscriptsUrl={game.rscriptsUrl}
                   scriptbloxUrl={game.scriptbloxUrl}
+                  showcaseVideoUrl={game.showcaseVideoUrl}
                   gamesStatusData={{}}
                 />
               ))}
