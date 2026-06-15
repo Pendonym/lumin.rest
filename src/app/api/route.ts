@@ -1,8 +1,13 @@
 import crypto from "crypto";
 import { NextRequest, NextResponse } from "next/server";
 
-const SELLAUTH_API_URL = process.env.SELLAUTH_API_URL!;
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL!;
+const SELLAUTH_API_URL = process.env.SELLAUTH_API_URL;
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
+
+function getEnvOrThrow(name: string, value: string | undefined): string {
+  if (!value) throw new Error(`Missing required environment variable: ${name}`);
+  return value;
+}
 
 function isValidCartItem(
   item: unknown,
@@ -17,20 +22,24 @@ function isValidCartItem(
 }
 
 export function GET() {
+  const siteUrl = getEnvOrThrow("NEXT_PUBLIC_SITE_URL", SITE_URL);
   return NextResponse.json({
     status: "ok",
-    service: new URL(SITE_URL).hostname,
+    service: new URL(siteUrl).hostname,
   });
 }
 
 export async function POST(request: NextRequest) {
   try {
+    const apiUrl = getEnvOrThrow("SELLAUTH_API_URL", SELLAUTH_API_URL);
+    const siteUrl = getEnvOrThrow("NEXT_PUBLIC_SITE_URL", SITE_URL);
+
     const origin = request.headers.get("origin");
     const referer = request.headers.get("referer");
     const allowed =
       !origin || !referer
         ? false
-        : origin === SITE_URL || referer.startsWith(SITE_URL);
+        : origin === siteUrl || referer.startsWith(siteUrl);
     if (!allowed) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
@@ -49,7 +58,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid shopId" }, { status: 400 });
     }
 
-    const challengeRes = await fetch(`${SELLAUTH_API_URL}/altcha`);
+    const challengeRes = await fetch(`${apiUrl}/altcha`);
     const challenge = await challengeRes.json();
 
     const nonceBuf = Buffer.from(challenge.salt, "utf8");
@@ -87,7 +96,7 @@ export async function POST(request: NextRequest) {
       }),
     ).toString("base64");
 
-    const checkoutRes = await fetch(`${SELLAUTH_API_URL}/checkout`, {
+    const checkoutRes = await fetch(`${apiUrl}/checkout`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ cart, shopId, altcha: payload }),

@@ -1,5 +1,5 @@
 {
-  "name": "webmspaint",
+  "name": "lumin-rest",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -28,21 +28,14 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tabs": "^1.1.12",
     "@radix-ui/react-tooltip": "^1.2.7",
-    "altcha": "^3.0.11",
-    "canvas-confetti": "^1.9.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "cmdk": "^1.1.1",
-    "framer-motion": "^12.23.12",
     "lucide-react": "^0.503.0",
     "motion": "^12.23.12",
     "next": "^16.2.7",
     "react": "19.1.2",
     "react-dom": "19.1.2",
-    "react-helmet-async": "^3.0.0",
-    "react-router-dom": "^7.6.1",
     "sharp": "^0.34.5",
-    "sonner": "^2.0.6",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {

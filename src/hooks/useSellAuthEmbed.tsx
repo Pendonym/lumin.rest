@@ -2,7 +2,6 @@
 
 import React, { useState, useCallback, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { toast } from 'sonner';
 
 export interface CartItem {
   productId: number;
@@ -80,8 +79,9 @@ function CheckoutModal({ url, onClose }: { url: string; onClose: () => void }) {
           <iframe
             src={url}
             title="SellAuth Embed"
-            referrerPolicy="no-referrer"
+            referrerPolicy="strict-origin-when-cross-origin"
             allow="payment; clipboard-write"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
             className="w-full h-[46rem] md:h-[52rem] border-0"
           />
         </div>
@@ -131,7 +131,7 @@ export function useSellAuthEmbed(): SellAuthEmbedHook {
       }
     } catch (error) {
       setPageLoading(false);
-      toast.error(error instanceof Error ? error.message : 'An error occurred during checkout');
+      console.error(error instanceof Error ? error.message : 'An error occurred during checkout');
     } finally {
       setIsLoading(false);
     }

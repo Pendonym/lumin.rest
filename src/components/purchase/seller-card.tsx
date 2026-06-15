@@ -16,6 +16,7 @@ export default function SellerCard({ reseller }: { reseller: Reseller }) {
               fill
               className="object-contain p-1.5"
               sizes="48px"
+              loading="lazy"
             />
           </div>
           <div className="min-w-0 flex-1">

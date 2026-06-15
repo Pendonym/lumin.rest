@@ -53,13 +53,10 @@ export default function Buy() {
                 <Benefits />
               </BlurFade>
 
-              <BlurFade delay={0.35}>
-                {lifetime && <LifetimeCard plan={lifetime} />}
-              </BlurFade>
-
               {official && (
-                <BlurFade delay={0.45}>
-                  <section>
+                <BlurFade delay={0.35}>
+                  <section className="flex flex-col gap-4">
+                    {lifetime && <LifetimeCard plan={lifetime} />}
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                       {official.plans
                         ?.filter((p) => p.name !== "Lifetime")

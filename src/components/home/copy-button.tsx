@@ -1,16 +1,15 @@
 import { Check, Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { useMemo } from "react";
 
 export default function CopyButton({text}: {text: string}) {
   const [copied, setCopied] = useState(false);
 
-  return useMemo(() => (
+  return (
     <Button
       size={"icon"}
       variant={"outline"}
-      className="relative rounded-md px-2"
+      className="relative rounded-md px-2 cursor-pointer"
       onClick={() => {
         navigator.clipboard.writeText(text);
         setCopied(true);
@@ -30,13 +29,13 @@ export default function CopyButton({text}: {text: string}) {
         }`}
       />
     </Button>
-  ), [copied, text]);
+  );
 }
 
 export function CopyButtonWithText({text, customOnClick}: {text: string, customOnClick?: () => void}) {
   const [copied, setCopied] = useState(false);
 
-  return useMemo(() => (
+  return (
     <div className="flex justify-center w-full mt-2">
       <Button
         variant="outline"
@@ -68,6 +67,5 @@ export function CopyButtonWithText({text, customOnClick}: {text: string, customO
         </div>
       </Button>
     </div>
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  ), [copied, text]);
+  );
 }

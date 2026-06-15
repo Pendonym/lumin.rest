@@ -22,7 +22,6 @@ const FadeText = ({ children, width }: { children: React.ReactNode, width: numbe
 
 type GameCardProps = {
   title: string;
-  mappingName: string;
   image: string;
   placeId?: number;
   url?: string;

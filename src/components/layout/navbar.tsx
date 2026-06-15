@@ -10,9 +10,6 @@ import {
 export default function Navbar() {
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
-      <div className="bg-background py-1.5 text-center text-xs text-white font-medium">
-        Not finished, don't expect funtionality.
-      </div>
       <NavbarRoot className="bg-background/90 backdrop-blur supports-backdrop-filter:bg-background/60">
         <NavbarBrand>
           <a href="/" className="cursor-pointer">

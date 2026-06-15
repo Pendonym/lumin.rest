@@ -96,6 +96,7 @@ export default function Home() {
                       width={20}
                       height={20}
                       className="w-5 h-5"
+                      loading="lazy"
                     />
                   </a>
                 </Button>
@@ -186,7 +187,6 @@ export default function Home() {
               {supportedGames.map((game) => (
                 <GameCard
                   key={game.mappingName}
-                  mappingName={game.mappingName}
                   title={game.title}
                   image={game.image}
                   placeId={game.placeId}

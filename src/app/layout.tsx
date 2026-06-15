@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, IBM_Plex_Mono } from "next/font/google";
-import { Toaster } from "@/components/ui/sonner";
 import TopLoader from "@/components/layout/top-loader";
 import "./globals.css";
 
@@ -59,7 +58,6 @@ export default function RootLayout({
       <body className={`${inter.variable} ${ibmPlexMono.variable}`}>
         <TopLoader />
         {children}
-        <Toaster richColors />
       </body>
     </html>
   );

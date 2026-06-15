@@ -34,8 +34,13 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# certificates
+/certificates/
+
 # env files (can opt-in for committing if needed)
 .env*
+.env.local*
+.env.production*
 
 
 # typescript
