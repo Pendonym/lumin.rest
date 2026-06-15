@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' tr.rbxcdn.com github.com q2p0njok3b.ufs.sh cdn.discordapp.com; font-src 'self' fonts.gstatic.com; frame-src 'self' https://api-internal-3.sellauth.com; connect-src 'self' https://api-internal-3.sellauth.com;",
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' tr.rbxcdn.com github.com q2p0njok3b.ufs.sh cdn.discordapp.com; font-src 'self' fonts.gstatic.com; frame-src 'self' https://*.mysellauth.com; connect-src 'self' https://api-internal-3.sellauth.com;",
           },
         ],
       },
