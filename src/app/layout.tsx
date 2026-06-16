@@ -55,7 +55,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/brand/icon.png" />
         <link rel="apple-touch-icon" href="/brand/icon.png" />
       </head>
-      <body className={`${inter.variable} ${ibmPlexMono.variable}`}>
+      <body className={`${inter.variable} ${ibmPlexMono.variable} overflow-x-hidden`}>
         <TopLoader />
         {children}
       </body>
